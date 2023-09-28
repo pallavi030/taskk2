@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Animation</title>
+    <style>
+        /* Basic styling for the animation container */
+        .animation-container {
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Increase the size of the train GIF */
+        .train {
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            top: 25px;
+            left: -200px;
+            animation: moveTrain 10s linear infinite; /* Animation name, duration, timing function, and repetition */
+        }
+
+        /* Keyframes for the train animation */
+        @keyframes moveTrain {
+            0% {
+                transform: translateX(-100%); /* Start from the left */
+            }
+            100% {
+                transform: translateX(100%); /* Move to the right */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Train Animation</h1>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+    <div class="animation-container">
+        <img src="mann.gif" alt="Train" class="train">
+    </div>
+
+    <script>
+        const train = document.querySelector('.train');
+        const startButton = document.getElementById('startBtn');
+        const stopButton = document.getElementById('stopBtn');
+        let animationInterval;
+
+        // Function to start the train animation
+        function startAnimation() {
+            train.style.animationPlayState = 'running';
+        }
+
+        // Function to stop the train animation
+        function stopAnimation() {
+            train.style.animationPlayState = 'paused';
+        }
+
+        // Add click event listeners to the start and stop buttons
+        startButton.addEventListener('click', startAnimation);
+        stopButton.addEventListener('click', stopAnimation);
+    </script>
+</body>
+</html>
