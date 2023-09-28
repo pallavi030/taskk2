@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body style="background-color: lightseagreen;">
+        <br>
+        <br>
+        <p id="hi" style="text-align: center; color: gold; font-size: large; font-weight: bold;"></p>
+        <br>
+        <p id="demo" style="text-align: center; color: gold; font-size: large; font-weight: bold;"></p>
+        
+
+        <script>
+            let str = prompt("Enter the word");
+            function alpha(str) {
+                var arr = str.split(""); // splits the string
+                res = arr.sort().join(""); // sort the array and joins to form a string
+                return res; // returns the result
+            }
+            document.getElementById("hi").innerHTML = "Input: "+ str;
+            document.getElementById("demo").innerHTML = "Output: "+ alpha(str);
+            console.log(alpha(str));
+        </script>
+
+    </body>
+</html>

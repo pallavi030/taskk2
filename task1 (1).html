@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body style="background-color: rgb(252, 252, 252);">
+        <p id="hi" style="text-align: center; color: rgb(10, 55, 188); font-size: large; font-weight: bold;"></p>
+        <br>
+        <p id="demo" style="text-align: center; color: rgb(10, 55, 188); font-size: large; font-weight: bold;"></p>
+        
+
+        <script>
+            let n = prompt("Enter the number you want to reverse");
+            let result = n.toString().split('').reverse().join('');
+            document.getElementById("hi").innerHTML = "Input: "+ n;
+            document.getElementById("demo").innerHTML = "Output: "+ result;
+            console.log(result);
+        </script>
+
+    </body>
+</html>
